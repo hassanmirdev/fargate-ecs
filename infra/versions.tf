@@ -2,8 +2,8 @@ terraform {
  required_version = ">= 1.0"
 
  backend "s3" {
- bucket = "terraform-state-bucket-hassan"
- key = "versios/terraform.tfstate"
+bucket = "terraformgithubbucket"
+ key = "fargate/terraform.tfstate"
  region = "us-east-1"
  }
 
