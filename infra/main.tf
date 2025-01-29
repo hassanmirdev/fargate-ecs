@@ -1,27 +1,9 @@
 provider "aws" {
-  region = var.aws_region
+ region = "us-east-1"
 }
-
 module "vpc" {
-  source = "./modules/vpc"
-}
-
-module "ecs" {
-  source = "./modules/ecs"
-}
-
-module "iam" {
-  source = "./modules/iam"
-}
-
-module "ecr" {
-  source = "./modules/ecr"
-}
-
-module "s3" {
-  source = "./modules/s3"
-}
-
-output "vpc_id" {
-  value = module.vpc.vpc_id
+ source = "./modules/vpc"
+ vpc_cidr = "10.0.0.0/16"
+ subnet_a_cidr = "10.0.1.0/24"
+ subnet_b_cidr = "10.0.2.0/24"
 }
